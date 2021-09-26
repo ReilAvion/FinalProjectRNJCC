@@ -9,6 +9,11 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Dashboard,
+  // eslint-disable-next-line import/named
+  AddItems,
+  // eslint-disable-next-line import/named
+  Home,
+  AboutScreen,
 } from './src/screens'
 
 const Stack = createStackNavigator()
@@ -27,6 +32,10 @@ export default function App() {
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
           <Stack.Screen name="Dashboard" component={Dashboard} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="AddItems" component={AddItems} />
+          <Stack.Screen name="AboutScreen" component={AboutScreen} />
+
           <Stack.Screen
             name="ResetPasswordScreen"
             component={ResetPasswordScreen}
