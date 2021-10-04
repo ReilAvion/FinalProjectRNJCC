@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native'
-import RestApi from '../api/RestApi'
 export default class Home extends React.Component {
   state = {
     todaySelected: true,
@@ -22,7 +21,7 @@ export default class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={{ paddingTop: 50 }}>
           <View
             style={{
@@ -31,11 +30,13 @@ export default class Home extends React.Component {
               justifyContent: 'space-between',
             }}
           >
-            <Image
-              resizeMode="contain"
-              style={{ height: 50, width: 50 }}
-              source={require('../images/menu.png')}
-            />
+            <TouchableOpacity>
+              <Image
+                resizeMode="contain"
+                style={{ height: 50, width: 50 }}
+                source={require('../images/menu.png')}
+              />
+            </TouchableOpacity>
             <TouchableOpacity
               onPress={() => navigate('AboutScreen', { name: 'AboutScreen' })}
             >
@@ -60,9 +61,7 @@ export default class Home extends React.Component {
               fontSize: 30,
               fontWeight: '700',
             }}
-          >
-            <RestApi />
-          </Text>
+          ></Text>
         </View>
         <View style={{ padding: 30 }}>
           <Text
@@ -381,7 +380,7 @@ export default class Home extends React.Component {
             />
           </TouchableOpacity>
         </View>
-      </View>
+      </ScrollView>
     )
   }
 }

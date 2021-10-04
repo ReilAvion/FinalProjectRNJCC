@@ -9,17 +9,18 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Dashboard,
-  // eslint-disable-next-line import/named
   AddItems,
-  // eslint-disable-next-line import/named
   Home,
   AboutScreen,
+  TestDatabase,
 } from './src/screens'
+import { HistoryRef } from './src/firebase/firebaseConfig'
 
 const Stack = createStackNavigator()
 
 export default function App() {
   return (
+    // <TestDatabase />
     <Provider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator

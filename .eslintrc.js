@@ -7,6 +7,7 @@ module.exports = {
     jest: true,
     node: true,
   },
+
   rules: {
     'jsx-a11y/href-no-hash': ['off'],
     'react/jsx-filename-extension': ['warn', { extensions: ['.js', '.jsx'] }],
@@ -51,5 +52,12 @@ module.exports = {
         ignoreRegExpLiterals: true,
       },
     ],
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
   },
 }

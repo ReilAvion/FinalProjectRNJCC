@@ -16,7 +16,7 @@ export default class AddItems extends React.Component {
   render() {
     const { navigate } = this.props.navigation
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View
           style={{
             height: 1000,
@@ -323,7 +323,7 @@ export default class AddItems extends React.Component {
             ></View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     )
   }
 }

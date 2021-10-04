@@ -1,13 +1,39 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Linking } from 'react-native'
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Linking,
+  Image,
+} from 'react-native'
 import { FontAwesome, AntDesign, Zocial } from '@expo/vector-icons'
 import Background from '../components/Background'
 import Button from '../components/Button'
 export default function AboutScreen({ navigation }) {
   return (
     <Background>
-      <View styles={styles.container}>
-        <View style={styles.identityContainer}>
+      <View style={styles.identityContainer}>
+        <View styles={styles.container}>
+          <View
+            style={{ flexDirection: 'row', padding: 20, alignItems: 'center' }}
+          >
+            <TouchableOpacity
+              mode="contained"
+              onPress={() =>
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: 'Home' }],
+                })
+              }
+            >
+              <Image
+                resizeMode="contain"
+                style={{ height: 20, width: 20 }}
+                source={require('../images/exit.png')}
+              />
+            </TouchableOpacity>
+          </View>
           <Text style={styles.header}>About Me</Text>
           <View style={styles.profilePicture}>
             <FontAwesome name="user-circle" size={150} color="black" />
